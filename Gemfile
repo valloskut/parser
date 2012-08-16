@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 
 gem 'nokogiri'
-gem 'activerecord-import'
+gem 'kaminari'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

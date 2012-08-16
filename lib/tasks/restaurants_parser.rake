@@ -55,5 +55,6 @@ task :parse_restaurants_info => :environment do
     end
   end
   threads.each(&:join)
-  p restaurants.count
+  Restaurant.delete_all
+  Restaurant.create restaurants
 end

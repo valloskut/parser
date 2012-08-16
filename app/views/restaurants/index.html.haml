@@ -1,5 +1,5 @@
 %h1 Listing restaurants
-
+= paginate @restaurants
 %table
   %tr
     %th Name
@@ -8,20 +8,18 @@
     %th Reviewer name
     %th Reviewer location
     %th Rating
-    %th Other
     %th
     %th
     %th
 
   - @restaurants.each do |restaurant|
     %tr
-      %td= restaurant.name
+      %td= restaurant.name.encode!('UTF-8', 'UTF-8', :invalid => :replace)
       %td= restaurant.zip
       %td= restaurant.address
       %td= restaurant.reviewer_name
       %td= restaurant.reviewer_location
       %td= restaurant.rating
-      %td= restaurant.other
       %td= link_to 'Show', restaurant
       %td= link_to 'Edit', edit_restaurant_path(restaurant)
       %td= link_to 'Destroy', restaurant, :confirm => 'Are you sure?', :method => :delete
