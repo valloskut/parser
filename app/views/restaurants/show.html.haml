@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @restaurant.name
+%p
+  %b Zip:
+  = @restaurant.zip
+%p
+  %b Address:
+  = @restaurant.address
+%p
+  %b Reviewer name:
+  = @restaurant.reviewer_name
+%p
+  %b Reviewer location:
+  = @restaurant.reviewer_location
+%p
+  %b Rating:
+  = @restaurant.rating
+%p
+  %b Other:
+  = @restaurant.other
+
+= link_to 'Edit', edit_restaurant_path(@restaurant)
+\|
+= link_to 'Back', restaurants_path

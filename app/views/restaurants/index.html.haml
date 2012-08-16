@@ -1,0 +1,31 @@
+%h1 Listing restaurants
+
+%table
+  %tr
+    %th Name
+    %th Zip
+    %th Address
+    %th Reviewer name
+    %th Reviewer location
+    %th Rating
+    %th Other
+    %th
+    %th
+    %th
+
+  - @restaurants.each do |restaurant|
+    %tr
+      %td= restaurant.name
+      %td= restaurant.zip
+      %td= restaurant.address
+      %td= restaurant.reviewer_name
+      %td= restaurant.reviewer_location
+      %td= restaurant.rating
+      %td= restaurant.other
+      %td= link_to 'Show', restaurant
+      %td= link_to 'Edit', edit_restaurant_path(restaurant)
+      %td= link_to 'Destroy', restaurant, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Restaurant', new_restaurant_path
