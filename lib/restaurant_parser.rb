@@ -82,6 +82,26 @@ class RestaurantParser
     @fields.keys.select { |k| k =~ /link/ }.map! { |k| fields[k] = @base + fields[k] if fields[k].start_with?('/') }
   end
 
+  def parse!
+    name
+    link
+    twitter_link
+    facebook_link
+    map_link
+    new_review_link
+    email_link
+    zip
+    address
+    image_link
+    if @first_review
+      first_review_link
+    else
+      reviewer_location
+      reviewer_location_link
+      reviewer_name
+    end
+    review_text
+    rating
+    absolutize_links
+  end
 end
-
-
