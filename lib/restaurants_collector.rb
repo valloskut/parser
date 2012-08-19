@@ -1,5 +1,4 @@
 class RestaurantsCollector
-  extend ActiveSupport::Memoizable
 
   def initialize(city)
     @base = "http://www.restaurants.com"
