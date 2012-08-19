@@ -1,5 +1,5 @@
 class RestaurantsCollector
-
+  attr_reader :restaurants
   def initialize(city)
     @base = "http://www.restaurants.com"
     @url = "/listing/search/empty/where/#{CGI.escape city}/screen/"
@@ -31,6 +31,7 @@ class RestaurantsCollector
   end
 
   def update!
+    collect if @restaurants.empty?
     Restaurant.delete_all
     Restaurant.create @restaurants
   end
